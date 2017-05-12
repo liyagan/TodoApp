@@ -157,7 +157,7 @@ public class ITTodoControllerTest {
                 .andExpect(status().isNotFound());
     }
 /*
-
+//FIXME: не реализован update
     @Test
     @ExpectedDatabase("toDoData.xml")
     public void update_EmptyTodoEntry_ShouldReturnValidationErrorForTitle() throws Exception {

@@ -22,7 +22,7 @@ public class TodoServiceImpl implements TodoService {
         todos.add(new Todo("Fuck you","Fuck you", false));
         todos.add(new Todo("Fuck them","Fuck you", false));
         todos.add(new Todo("Fuck us","Fuck you", false));
-        todos.add(new Todo("Fuck your pussy","Fuck you", false));
+        todos.add(new Todo("Fuck you","Fuck you", false));
         return todos;
     }
 
@@ -32,6 +32,7 @@ public class TodoServiceImpl implements TodoService {
         return todoRepository.save(todo);
     }
 
+    //FIXME: ДОДЕЛАТЬ НУ
     @Override
     public Todo update(Todo todo) {
         Todo model = findById(Long.valueOf(todo.getId()));
