@@ -9,12 +9,7 @@ import java.util.List;
  */
 
 public interface TodoService {
-
-    List<Todo> getAllTodos();
-
     Todo add(Todo todo);
-
-    Todo update(Todo todo);
 
    void deleteById(Long id);
 

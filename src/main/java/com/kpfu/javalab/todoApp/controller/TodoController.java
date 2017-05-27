@@ -21,23 +21,6 @@ public class TodoController {
     @Autowired
     TodoService todoService;
 
-    final ObjectMapper mapper = new ObjectMapper();
-    final StringWriter sw = new StringWriter();
-
-    @RequestMapping(value = "/todos", method = RequestMethod.GET)
-    public List<String> getAllTodos() {
-        List<Todo> todos = todoService.getAllTodos();
-        try {
-            mapper.writeValue(sw, todos);
-            System.out.println(sw.toString());
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     @RequestMapping(value = "/api/todo", method = RequestMethod.POST)
     @ResponseBody
     public Todo add(@Valid @RequestBody Todo todo) {
@@ -66,10 +49,5 @@ public class TodoController {
         return todoService.findById(id);
     }
 
-    @RequestMapping(value = "/api/todo/{id}", method = RequestMethod.PUT)
-    @ResponseBody
-    public Todo update(@Valid @RequestBody Todo todo, @PathVariable("id") Long todoId) {
-        return todoService.update(todo);
-    }
 
 }

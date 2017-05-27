@@ -17,26 +17,8 @@ public class TodoServiceImpl implements TodoService {
     TodoRepository todoRepository;
 
     @Override
-    public List<Todo> getAllTodos() {
-        List<Todo> todos = new ArrayList<>();
-        todos.add(new Todo("Fuck you","Fuck you", false));
-        todos.add(new Todo("Fuck them","Fuck you", false));
-        todos.add(new Todo("Fuck us","Fuck you", false));
-        todos.add(new Todo("Fuck you","Fuck you", false));
-        return todos;
-    }
-
-
-    @Override
     public Todo add(Todo todo) {
         return todoRepository.save(todo);
-    }
-
-    //FIXME: ДОДЕЛАТЬ НУ
-    @Override
-    public Todo update(Todo todo) {
-        Todo model = findById(Long.valueOf(todo.getId()));
-        return null;
     }
 
     @Override
